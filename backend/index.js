@@ -3,7 +3,12 @@ const express = require('express');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+    origin: "*", // Allow all origins (or specify your frontend URL)
+    methods: "GET,POST,PUT,DELETE,OPTIONS",
+    allowedHeaders: "Content-Type, Authorization",
+  }
+app.use(cors(corsOptions));
 const connectDB = require('./database/mongo');
 const routes = require('./routes/route');
 
