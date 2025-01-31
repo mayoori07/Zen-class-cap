@@ -9,7 +9,7 @@ import { useState } from 'react';
 // import { storeUserData } from '../services/storage';
 
 function Dashboard(){
-  axios.defaults.baseURL = 'http://localhost:4040/api';
+  axios.defaults.baseURL = 'https://project-management-tool-server-16w1.onrender.com/api';
     const navigate = useNavigate(); 
     // const [isToggle, setIsToggle] = useState(false);
     const [toggleStates, setToggleStates] = useState({});
@@ -123,7 +123,7 @@ function Dashboard(){
     };
 
     const renderedProjects = details.map((project) => {
-      const projectTasks = tasks.filter((task) => task.projectId === project.id); // Filter tasks for the specific project ID
+      const projectTasks = tasks.filter((task) => task.projectId === project.id); 
   
       return (
         <tr key={project.id}>

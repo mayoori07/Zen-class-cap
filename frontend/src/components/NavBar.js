@@ -11,7 +11,7 @@ export default function NavBar(props) {
   const onClickProjectDetails = (e) => {
      e.preventDefault();
     //  const d= getProject_detail(userdetails.token)
-    axios.post(`http://localhost:4040/api/project/index`, {token: userdetails.token,
+    axios.post(`https://project-management-tool-server-16w1.onrender.com/api/project/index`, {token: userdetails.token,
     })
     .then((res) => {
       navigate("/dashboard", {
@@ -24,7 +24,7 @@ export default function NavBar(props) {
   const onClickTasksAsignedDetails = (e) =>{
     e.preventDefault();
     
-    axios.post(`http://localhost:4040/api/task/mine`, {token: userdetails.token,
+    axios.post(`https://project-management-tool-server-16w1.onrender.com/api/task/mine`, {token: userdetails.token,
     })
     .then((res) => {
       navigate("/Asinged-Task-Dashboard", {

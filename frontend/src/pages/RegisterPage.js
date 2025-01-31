@@ -7,7 +7,7 @@ import { getUserData } from "../services/storage";
 import { isAuthenticated } from "../services/Auth";
 
 function RegisterPage() {
-    axios.defaults.baseURL = 'http://localhost:4040/api';
+    axios.defaults.baseURL = 'https://project-management-tool-server-16w1.onrender.com/api';
     const navigate = useNavigate();
     const initialStateErrors={
         username:{required:false},

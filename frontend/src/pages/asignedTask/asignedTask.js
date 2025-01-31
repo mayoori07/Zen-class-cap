@@ -8,7 +8,7 @@ import { getUserData } from "../../services/storage";
 import axios from "axios";
 
 function AsignedTask() {
-    axios.defaults.baseURL = "http://localhost:4040/api";
+    axios.defaults.baseURL = "https://project-management-tool-server-16w1.onrender.com/api";
     const userdetails = getUserData();
     const navigate = useNavigate();
 
@@ -35,7 +35,7 @@ function AsignedTask() {
         }
         axios.post("/task/update/complete",({token: userdetails.token, id: task._id})).then((response) =>{
           if (response.data.status){
-            axios.post(`http://localhost:4040/api/task/mine`, {token: userdetails.token,
+            axios.post(`https://project-management-tool-server-16w1.onrender.com/api/task/mine`, {token: userdetails.token,
             })
             .then((res) => {
               navigate("/Asinged-Task-Dashboard", {

@@ -8,7 +8,7 @@ import { storeUserData, getUserData } from '../services/storage';
 import { isAuthenticated } from '../services/Auth';
 
 function LoginPage(){
-    axios.defaults.baseURL = 'http://localhost:4040/api';
+    axios.defaults.baseURL = 'https://project-management-tool-server-16w1.onrender.com/api';
     const navigate = useNavigate();
     const userdetails = getUserData();
     const initialStateErrors={
@@ -41,7 +41,7 @@ function LoginPage(){
             axios.post('/login',inputs).then((response)=>{
                 if(response.data.status){
                   storeUserData(response.data);
-                  axios.post(`http://localhost:4040/api/project/index`, {token: response.data.token,
+                  axios.post(`https://project-management-tool-server-16w1.onrender.com/api/project/index`, {token: response.data.token,
                   })
                   .then((res) => {
                     navigate("/dashboard", {

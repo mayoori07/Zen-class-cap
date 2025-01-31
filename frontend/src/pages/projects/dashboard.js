@@ -11,7 +11,7 @@ import { DeleteProject, getProject_detail } from "../../services/API";
 // import { storeUserData } from '../services/storage';
 
 function Dashboard() {
-  axios.defaults.baseURL = "http://localhost:4040/api";
+  axios.defaults.baseURL = "https://project-management-tool-server-16w1.onrender.com/api";
   const userdetails = getUserData();
   const navigate = useNavigate();
 
@@ -36,7 +36,7 @@ function Dashboard() {
     }
     axios.post("/project/destroy",({token: userdetails.token, id: id})).then((response) =>{
       if (response.data.status){
-        axios.post(`http://localhost:4040/api/project/index`, {token: userdetails.token,
+        axios.post(`https://project-management-tool-server-16w1.onrender.com/api/project/index`, {token: userdetails.token,
         })
         .then((res) => {
           navigate("/dashboard", {
@@ -85,11 +85,11 @@ function Dashboard() {
 
   const toggleProjectView = async (project, e) => {
     e.preventDefault();
-    setActiveProjectId(project._id); // Set active project ID
+    setActiveProjectId(project._id); 
     setToggleStates([]);
 
     try {
-      const res = await axios.post(`http://localhost:4040/api/project/show`, {
+      const res = await axios.post(`https://project-management-tool-server-16w1.onrender.com/api/project/show`, {
         token: userdetails.token,
         project_id: project._id,
       });

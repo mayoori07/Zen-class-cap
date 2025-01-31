@@ -8,7 +8,7 @@ import { isAuthenticated, Logout } from "../../services/Auth";
 import { getUserData } from "../../services/storage";
 
 function FormDetails() {
-  axios.defaults.baseURL = "http://localhost:4040/api";
+  axios.defaults.baseURL = "https://project-management-tool-server-16w1.onrender.com/api";
   const navigate = useNavigate();
   const userdetails = getUserData();
   const location = useLocation();
@@ -81,7 +81,7 @@ function FormDetails() {
 
       apiCall.then((response)=>{
         if (response.data.status){
-          axios.post(`http://localhost:4040/api/project/index`, {token: userdetails.token,
+          axios.post(`https://project-management-tool-server-16w1.onrender.com/api/project/index`, {token: userdetails.token,
           })
           .then((res) => {
             alert("Operation done Sucessfull ")
