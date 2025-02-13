@@ -65,22 +65,7 @@ function Dashboard() {
     if (!isConfirmed) {
       return;
     }
-    // axios.post("/project/destroy",({token: userdetails.token, id: id})).then((response) =>{
-    //   if (response.data.status){
-    //     axios.post(`http://localhost:4040/api/project/index`, {token: userdetails.token,
-    //     })
-    //     .then((res) => {
-    //       navigate("/dashboard", {
-    //         state: { details: res.data.data },
-    //       });
-    //     }).catch((err) => {
-    //       console.log(err);
-    //     });      
-    //   }
-    //   else{
-    //     console.log("delete have some issue");
-    //   }
-    // })
+    
   };
 
   const toggleProjectView = async (project, e) => {
